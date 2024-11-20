@@ -1,4 +1,5 @@
 // import React from 'react'
+// izhan buat ni
 
 const Battle = () => {
   return (
