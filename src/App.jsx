@@ -7,36 +7,50 @@ import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
 import { PhantomWalletAdapter, SolflareWalletAdapter } from '@solana/wallet-adapter-wallets';
 import {
   WalletModalProvider,
-  WalletMultiButton,
 } from "@solana/wallet-adapter-react-ui";
-import { clusterApiUrl } from "@solana/web3.js";
-import "./App.css";
- 
-// Default styles that can be overridden by your app
 import "@solana/wallet-adapter-react-ui/styles.css";
- 
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Buy from "./pages/Buy";
+import Checkin from "./pages/Checkin";
+import Manager from "./pages/Manager";
+import Battle from "./pages/Battle";
+import Home from "./pages/Home";
+
 function App() {
-  // The network can be set to 'devnet', 'testnet', or 'mainnet-beta'.
   const network = WalletAdapterNetwork.Devnet;
-  // You can also provide a custom RPC endpoint.
-  // const endpoint = useMemo(() => clusterApiUrl(network), [network]);
   const endpoint = "https://rpc.devnet.soo.network/rpc";
- 
+
   const wallets = useMemo(
-    () => [new PhantomWalletAdapter(), new SolflareWalletAdapter()],
-    []  // Removed network dependency since we're using custom endpoint
+    () => [
+      new PhantomWalletAdapter(),
+      new SolflareWalletAdapter({ network })
+    ],
+    [network]
   );
- 
+
   return (
     <ConnectionProvider endpoint={endpoint}>
       <WalletProvider wallets={wallets} autoConnect>
         <WalletModalProvider>
-          <WalletMultiButton />
-          <h1>Hello Solana</h1>
+          <BrowserRouter>
+            <div className="min-h-screen bg-gray-900">
+              <Navbar />
+              <main className="container mx-auto px-4 py-8">
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/buy" element={<Buy />} />
+                  <Route path="/checkin" element={<Checkin />} />
+                  <Route path="/battle" element={<Battle />} />
+                  <Route path="/manager" element={<Manager />} />
+                </Routes>
+              </main>
+            </div>
+          </BrowserRouter>
         </WalletModalProvider>
       </WalletProvider>
     </ConnectionProvider>
   );
 }
- 
+
 export default App;
