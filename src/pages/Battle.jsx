@@ -1,8 +1,8 @@
-import React from 'react'
+// import React from 'react'
 
 const Battle = () => {
   return (
-    <div>Battle</div>
+    <div className="text-black">Battle</div>
   )
 }
 
