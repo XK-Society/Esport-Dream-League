@@ -11,7 +11,7 @@ import {
 import "@solana/wallet-adapter-react-ui/styles.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Buy from "./pages/Buy";
+import Marketplace from "./pages/Marketplace";
 import Checkin from "./pages/Checkin";
 import Manager from "./pages/Manager";
 import Battle from "./pages/Battle";
@@ -39,7 +39,7 @@ function App() {
               <main className="container mx-auto px-4 py-8">
                 <Routes>
                   <Route path="/" element={<Home />} />
-                  <Route path="/buy" element={<Buy />} />
+                  <Route path="/buy" element={<Marketplace />} />
                   <Route path="/checkin" element={<Checkin />} />
                   <Route path="/battle" element={<Battle />} />
                   <Route path="/manager" element={<Manager />} />
