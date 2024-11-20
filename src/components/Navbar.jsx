@@ -3,7 +3,7 @@ import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 
 const Navbar = () => {
   return (
-    <nav className="bg-slate-800 p-4 fixed w-full top-0 z-50">
+    <nav className="bg-gray-800 p-4 fixed w-full top-0 z-50 border-b-2 border-white">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo/Brand */}
         <Link to="/" className="text-white text-xl font-bold">

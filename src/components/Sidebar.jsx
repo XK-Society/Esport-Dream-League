@@ -11,7 +11,7 @@ const Sidebar = () => {
   return (
     <div className="bg-gray-800 w-64 fixed left-0 top-16 bottom-0 z-40">
       <div className="p-4">
-        <h2 className="text-white text-xl font-bold mb-4">Games</h2>
+        <h2 className="text-white text-xl font-bold mb-4 pt-4">Games</h2>
         <div className="space-y-2">
           {games.map((game, index) => (
             <div
