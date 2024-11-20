@@ -11,6 +11,7 @@ import {
 import "@solana/wallet-adapter-react-ui/styles.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import Sidebar from "./components/Sidebar";
 import Marketplace from "./pages/Marketplace";
 import Checkin from "./pages/Checkin";
 import Manager from "./pages/Manager";
@@ -34,16 +35,19 @@ function App() {
       <WalletProvider wallets={wallets} autoConnect>
         <WalletModalProvider>
           <BrowserRouter>
-            <div className="min-h-screen bg-gray-900">
+            <div className="min-h-screen bg-slate-300">
               <Navbar />
-              <main className="container mx-auto px-4 py-8">
-                <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/buy" element={<Marketplace />} />
-                  <Route path="/checkin" element={<Checkin />} />
-                  <Route path="/battle" element={<Battle />} />
-                  <Route path="/manager" element={<Manager />} />
-                </Routes>
+              <Sidebar />
+              <main className="ml-64 pt-16">
+                <div className="container mx-auto px-4 py-8">
+                  <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/buy" element={<Marketplace />} />
+                    <Route path="/checkin" element={<Checkin />} />
+                    <Route path="/battle" element={<Battle />} />
+                    <Route path="/manager" element={<Manager />} />
+                  </Routes>
+                </div>
               </main>
             </div>
           </BrowserRouter>
