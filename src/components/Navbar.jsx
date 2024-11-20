@@ -12,9 +12,6 @@ const Navbar = () => {
 
         {/* Navigation Links */}
         <div className="hidden md:flex space-x-6">
-          <Link to="/" className="text-gray-300 hover:text-white transition">
-            Home
-          </Link>
           <Link to="/buy" className="text-gray-300 hover:text-white transition">
             Buy
           </Link>
@@ -30,7 +27,7 @@ const Navbar = () => {
         </div>
 
         {/* Wallet Button */}
-        <div className="flex items-center">
+        <div className="flex items-center wallet-button-container">
           <WalletMultiButton />
         </div>
       </div>

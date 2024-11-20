@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
   const games = [
@@ -15,7 +15,7 @@ const Sidebar = () => {
         <div className="space-y-2">
           {games.map((game, index) => (
             <div
-              key={index}
+              key={index} 
               className="flex items-center p-3 text-gray-300 hover:bg-gray-700 rounded-lg cursor-pointer transition-colors"
             >
               <span className="mr-3">{game.icon}</span>
