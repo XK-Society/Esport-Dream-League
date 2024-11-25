@@ -37,8 +37,8 @@ function App() {
           <BrowserRouter>
             <div className="min-h-screen bg-slate-300">
               <Navbar />
-              <Sidebar />
-              <main className="ml-64 pt-16">
+              {/* <Sidebar /> */}
+              <main className="  pt-16">
                 <div className="container mx-auto px-4 py-8">
                   <Routes>
                     <Route path="/" element={<Home />} />
