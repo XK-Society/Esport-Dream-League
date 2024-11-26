@@ -1,6 +1,7 @@
 import { useWallet } from '@solana/wallet-adapter-react';
 import CardPacks from '../components/CardPacks';
 import PlayerCards from '../components/PlayerCards';
+import ParticlesBackground from '../components/ParticlesBackground';
 
 const Marketplace = () => {
   const { connected } = useWallet();
@@ -59,13 +60,17 @@ const Marketplace = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 space-y-8">
-      <CardPacks onBuyPack={handleBuyPack} />
-      <PlayerCards 
-        cards={listedCards} 
-        onBuyCard={handleBuyCard} 
-        truncateAddress={truncateAddress}
-      />
+    <div className="relative z-10">
+      <ParticlesBackground />
+      <div className="container mx-auto px-4 py-8 space-y-8">
+        <h1 className="text-3xl font-bold text-white mb-8 text-center">Marketplace</h1>
+        <CardPacks onBuyPack={handleBuyPack} />
+        <PlayerCards 
+          cards={listedCards} 
+          onBuyCard={handleBuyCard} 
+          truncateAddress={truncateAddress}
+        />
+      </div>
     </div>
   );
 };
