@@ -17,6 +17,7 @@ import Manager from "./pages/Manager";
 import Battle from "./pages/Battle";
 import Home from "./pages/Home";
 import ParticlesBackground from "./components/ParticlesBackground";
+import Footer from "./components/Footer";
 
 function App() {
   const network = WalletAdapterNetwork.Devnet;
@@ -35,10 +36,10 @@ function App() {
       <WalletProvider wallets={wallets} autoConnect>
         <WalletModalProvider>
           <BrowserRouter>
-            <div className="min-h-screen">
+            <div className="min-h-screen flex flex-col">
               <ParticlesBackground />
               <Navbar />
-              <main className="pt-16 relative z-10">
+              <main className="pt-16 relative z-10 flex-grow">
                 <div className="container mx-auto px-4 py-8">
                   <Routes>
                     <Route path="/" element={<Home />} />
@@ -49,6 +50,7 @@ function App() {
                   </Routes>
                 </div>
               </main>
+              <Footer />
             </div>
           </BrowserRouter>
         </WalletModalProvider>

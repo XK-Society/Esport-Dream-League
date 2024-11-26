@@ -129,7 +129,7 @@ const Manager = () => {
       <div className="bg-gray-900 rounded-lg p-3">
         <div className="flex justify-between items-start mb-2">
           <h3 className="font-bold text-white">{card.name}</h3>
-          <span className="px-2 py-0.5 rounded text-xs font-semibold bg-black bg-opacity-30">
+          <span className="px-2 py-0.5 rounded text-xs font-semibold bg-black bg-opacity-30 text-white">
             {card.rarity}
           </span>
         </div>
