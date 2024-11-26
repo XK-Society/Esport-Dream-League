@@ -17,6 +17,7 @@ const ParticlesBackground = () => {
             value: "#0f172a",
           },
         },
+        fpsLimit: 120,
         particles: {
           color: {
             value: "#6366f1",
@@ -30,14 +31,20 @@ const ParticlesBackground = () => {
           },
           move: {
             enable: true,
+            direction: "none",
+            outModes: {
+              default: "bounce",
+            },
+            random: false,
             speed: 1,
+            straight: false,
           },
           number: {
-            value: 50,
             density: {
               enable: true,
               area: 800,
             },
+            value: 80,
           },
           opacity: {
             value: 0.3,
@@ -49,6 +56,7 @@ const ParticlesBackground = () => {
             value: { min: 1, max: 3 },
           },
         },
+        detectRetina: true,
       }}
       style={{
         position: "fixed",
@@ -62,4 +70,4 @@ const ParticlesBackground = () => {
   );
 };
 
-export default ParticlesBackground; 
+export default ParticlesBackground;

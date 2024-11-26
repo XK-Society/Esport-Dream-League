@@ -11,12 +11,12 @@ import {
 import "@solana/wallet-adapter-react-ui/styles.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Sidebar from "./components/Sidebar";
 import Marketplace from "./pages/Marketplace";
 import Checkin from "./pages/Checkin";
 import Manager from "./pages/Manager";
 import Battle from "./pages/Battle";
 import Home from "./pages/Home";
+import ParticlesBackground from "./components/ParticlesBackground";
 
 function App() {
   const network = WalletAdapterNetwork.Devnet;
@@ -35,10 +35,10 @@ function App() {
       <WalletProvider wallets={wallets} autoConnect>
         <WalletModalProvider>
           <BrowserRouter>
-            <div className="min-h-screen bg-slate-300">
+            <div className="min-h-screen">
+              <ParticlesBackground />
               <Navbar />
-              {/* <Sidebar /> */}
-              <main className="  pt-16">
+              <main className="pt-16 relative z-10">
                 <div className="container mx-auto px-4 py-8">
                   <Routes>
                     <Route path="/" element={<Home />} />
