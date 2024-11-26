@@ -14,7 +14,7 @@ const PlayerCards = ({ cards, onBuyCard, truncateAddress }) => {
 
   return (
     <div>
-      <h2 className="text-2xl font-bold mb-4">Player Cards Marketplace</h2>
+      <h2 className="text-2xl font-bold mb-5 text-center text-white mt-10">Player Cards Marketplace</h2>
       <div className="flex flex-wrap justify-center gap-4 max-w-6xl mx-auto">
         {cards.map((card) => (
           <div key={card.id} className="w-64 group relative">

@@ -24,7 +24,7 @@ const CardPacks = ({ onBuyPack }) => {
 
   return (
     <div>
-      <h2 className="text-2xl font-bold mb-4">Card Packs</h2>
+      <h2 className="text-2xl font-bold mb-5 text-center text-white">Card Packs</h2>
       <div className="flex justify-center gap-6">
         {/* Basic Pack */}
         <div className="w-56 group relative">
